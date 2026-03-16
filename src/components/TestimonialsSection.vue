@@ -70,11 +70,11 @@ defineEmits(['hover', 'unhover'])
 const active = ref(0)
 const testimonials = [
   {
-    text: "I was skeptical about building from the UK without being there. Cedar Africa sent me videos every single month, answered every question, and delivered exactly what we agreed on. My family now lives in a home I'm proud of.",
+    text: "I was skeptical about building from the UK without being there. Cedar Home Builder sent me videos every single month, answered every question, and delivered exactly what we agreed on. My family now lives in a home I'm proud of.",
     name: "Ngozi Adeyemi", location: "Manchester, UK", project: "4-Bedroom Duplex, Lekki", color: "#2A5040"
   },
   {
-    text: "The title verification alone was worth every penny. I had been burned before by a previous agent. Cedar Africa showed me documentation I could verify independently. That level of transparency is rare in Nigeria.",
+    text: "The title verification alone was worth every penny. I had been burned before by a previous agent. Cedar Home Builder showed me documentation I could verify independently. That level of transparency is rare in Nigeria.",
     name: "Emeka Okonkwo", location: "Houston, USA", project: "Land Acquisition, Abuja", color: "#C9A84C"
   },
   {
@@ -82,7 +82,7 @@ const testimonials = [
     name: "Amara Diallo", location: "Toronto, Canada", project: "3-Bedroom Bungalow, Enugu", color: "#1C3A2B"
   },
   {
-    text: "I manage my property from Germany. Cedar Africa handles everything — tenants, repairs, rent collection. I get a clear monthly statement. It's completely passive income from my homeland.",
+    text: "I manage my property from Germany. Cedar Home Builder handles everything — tenants, repairs, rent collection. I get a clear monthly statement. It's completely passive income from my homeland.",
     name: "Chisom Eze", location: "Berlin, Germany", project: "Property Management, PH", color: "#8B5A2B"
   },
 ]

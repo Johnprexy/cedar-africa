@@ -7,7 +7,7 @@
           Let's start building<br/><em>your future.</em>
         </h2>
         <p class="booking-sub reveal reveal-delay-2">
-          Book a free 30-minute consultation with a Cedar Africa advisor. We'll discuss your vision, answer every question, and map out a clear plan.
+          Book a free 30-minute consultation with a Cedar Home Builder advisor. We'll discuss your vision, answer every question, and map out a clear plan.
         </p>
         <div class="booking-features reveal reveal-delay-3">
           <div class="bf" v-for="f in features" :key="f">
@@ -19,12 +19,12 @@
           </div>
         </div>
         <div class="contact-alts reveal reveal-delay-4">
-          <a href="mailto:hello@cedarafrica.com" class="contact-link" @mouseenter="$emit('hover')" @mouseleave="$emit('unhover')">
+          <a href="mailto:hello@cedarhomebuilder.com" class="contact-link" @mouseenter="$emit('hover')" @mouseleave="$emit('unhover')">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
               <rect x="2" y="4" width="14" height="10" rx="1" stroke="currentColor" stroke-width="1.2"/>
               <path d="M2 5L9 10L16 5" stroke="currentColor" stroke-width="1.2"/>
             </svg>
-            hello@cedarafrica.com
+            hello@cedarhomebuilder.com
           </a>
           <a href="https://wa.me/2348100000000" class="contact-link" @mouseenter="$emit('hover')" @mouseleave="$emit('unhover')">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">

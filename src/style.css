@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+@import "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
 
 :root {
   --forest: #1C3A2B;
-  --forest-deep: #0F2119;
+  --forest-deep: #0A1F14;
+  --forest-mid: #1A3328;
   --forest-light: #2A5040;
   --gold: #C9A84C;
   --gold-light: #E5C97A;
@@ -12,9 +14,13 @@
   --white: #FDFAF5;
   --charcoal: #1A1A1A;
   --muted: #6B7B6E;
+  --tech-blue: #4ECDC4;
+  --tech-blue-dim: rgba(78,205,196,0.12);
+
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'DM Sans', sans-serif;
   --font-ui: 'Syne', sans-serif;
+
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
   --spring: cubic-bezier(0.34, 1.56, 0.64, 1);

@@ -10,10 +10,10 @@
         </h2>
         <div class="about-body reveal reveal-delay-2">
           <p>
-            Cedar Africa was born from a simple truth: millions of Nigerians abroad want to build at home but lack the trusted partner on the ground to make it happen safely.
+            Cedar Home Builder was born from a simple truth: millions of Nigerians abroad want to build at home but lack the trusted partner on the ground to make it happen safely.
           </p>
           <p>
-            We are that partner — a full-service real estate and construction firm with deep roots in Nigeria and deep understanding of what diaspora families need: transparency, accountability, and results.
+            We are that partner — a geo-technology platform and construction firm with deep roots in Nigeria and deep understanding of what diaspora families need: precision technology, transparency, and results.
           </p>
         </div>
         <div class="about-values reveal reveal-delay-3">
@@ -29,7 +29,7 @@
 
       <div class="about-visual reveal reveal-delay-2">
         <div class="about-img-wrap">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Cedar Africa team" />
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Cedar Home Builder team" />
           <div class="about-img-accent"></div>
         </div>
         <div class="mission-card reveal reveal-delay-4">

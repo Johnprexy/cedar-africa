@@ -2,25 +2,20 @@
   <section class="services" id="services">
     <div class="services-inner">
       <div class="services-header">
-        <span class="section-label reveal">What We Do</span>
+        <span class="section-label reveal">Full-Service Platform</span>
         <h2 class="services-title reveal reveal-delay-1">
-          End-to-end property<br/><em>solutions</em> for the diaspora.
+          Technology-backed,<br/><em>end-to-end</em> delivery.
         </h2>
         <p class="services-sub reveal reveal-delay-2">
-          From finding the perfect plot to handing you the keys — we handle every step, every update, every decision. You stay in the loop from wherever you are in the world.
+          Cedar Home Builder combines its geo-tech platform with a complete construction and property management service — one partner, start to finish.
         </p>
       </div>
 
       <div class="services-grid">
-        <div
-          class="service-card reveal"
-          :class="'reveal-delay-' + (i + 1)"
-          v-for="(s, i) in services"
-          :key="s.title"
-          @mouseenter="hovered = i; $emit('hover')"
-          @mouseleave="hovered = null; $emit('unhover')"
+        <div class="service-card reveal" :class="'reveal-delay-' + (i+1)"
+          v-for="(s, i) in services" :key="s.title"
           :style="{ '--accent': s.color }"
-        >
+          @mouseenter="$emit('hover')" @mouseleave="$emit('unhover')">
           <div class="card-number">0{{ i + 1 }}</div>
           <div class="card-icon">{{ s.icon }}</div>
           <h3 class="card-title">{{ s.title }}</h3>
@@ -28,10 +23,8 @@
           <ul class="card-features">
             <li v-for="f in s.features" :key="f">{{ f }}</li>
           </ul>
-          <div class="card-arrow">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M4 10H16M10 4L16 10L10 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
+          <div class="card-tech-tag" v-if="s.techTag">
+            <span class="badge-dot"></span>{{ s.techTag }}
           </div>
           <div class="card-glow"></div>
         </div>
@@ -41,183 +34,63 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { onMounted } from 'vue'
 defineEmits(['hover', 'unhover'])
-const hovered = ref(null)
 
 const services = [
-  {
-    icon: '🏗', title: 'Land Acquisition', color: '#C9A84C',
-    desc: 'We identify, verify, and acquire land on your behalf — with full title checks and legal clearance.',
-    features: ['Title verification', 'Government survey', 'Legal documentation', 'Secure escrow payments'],
-  },
-  {
-    icon: '📐', title: 'Design & Architecture', color: '#2A5040',
-    desc: 'Our architects bring your vision to life with 3D renders and detailed structural plans before breaking ground.',
-    features: ['3D visualizations', 'Architectural drawings', 'Material selection', 'Cost estimation'],
-  },
-  {
-    icon: '🏛', title: 'Construction Management', color: '#C9A84C',
-    desc: 'Vetted contractors, supervised timelines, and rigorous quality control at every stage of construction.',
-    features: ['Site supervision', 'Weekly updates', 'Quality assurance', 'Timeline management'],
-  },
-  {
-    icon: '📷', title: 'Progress Reporting', color: '#2A5040',
-    desc: 'Stay connected to your project from anywhere. Monthly video reports, live site feeds, and a dedicated dashboard.',
-    features: ['Monthly video updates', 'Photo documentation', 'Client dashboard', 'WhatsApp briefings'],
-  },
-  {
-    icon: '🔑', title: 'Property Management', color: '#C9A84C',
-    desc: 'Once built, we manage your property — finding tenants, collecting rent, and maintaining the asset.',
-    features: ['Tenant screening', 'Rent collection', 'Maintenance handling', 'Financial reporting'],
-  },
-  {
-    icon: '⚖️', title: 'Legal & Compliance', color: '#2A5040',
-    desc: 'Navigate Nigerian property law with ease. Our legal team handles every regulatory and documentation requirement.',
-    features: ['C of O processing', 'Deed of Assignment', 'Survey plans', 'Tax compliance'],
-  },
+  { icon: '🗺', title: 'Geo-Verified Land Acquisition', color: '#C9A84C', techTag: 'GPS + Map Platform',
+    desc: 'Every plot we present is geo-referenced on our interactive map with GPS coordinates, satellite imagery, and government title verification before you see it.',
+    features: ['GPS-anchored title verification', 'Satellite boundary check', 'Secure escrow payments', 'Digital ownership certificate'] },
+  { icon: '📐', title: 'Design & Architecture', color: '#4ECDC4', techTag: null,
+    desc: 'Architects design your home in 3D. Walk through your property virtually before a single brick is laid.',
+    features: ['3D virtual walkthroughs', 'Structural drawings', 'Material cost estimation', 'Client approval workflow'] },
+  { icon: '🏗', title: 'Construction Management', color: '#C9A84C', techTag: null,
+    desc: 'Vetted contractors, supervised timelines, and rigorous quality control at every phase.',
+    features: ['On-site supervision', 'Milestone-based payments', 'Quality assurance checks', 'Real-time timeline tracker'] },
+  { icon: '🛸', title: 'Drone Progress Reports', color: '#4ECDC4', techTag: 'Drone + Geo-tag',
+    desc: 'Monthly 4K aerial drone surveys delivered to your private dashboard. See every inch of progress from above, with coordinates stamped on every frame.',
+    features: ['4K aerial video monthly', 'Geo-tagged photography', 'Month-on-month comparison', 'Client drone portal'] },
+  { icon: '📡', title: 'Live Site Geolocation', color: '#C9A84C', techTag: 'Live GPS Feed',
+    desc: 'Your plot is live on our map platform 24/7. Track your project\'s GPS location, boundary, and construction phase in real time from your phone or laptop.',
+    features: ['24/7 live map access', 'Construction phase overlay', 'Alert notifications', 'Shareable site link'] },
+  { icon: '⚖️', title: 'Legal & Title Management', color: '#4ECDC4', techTag: null,
+    desc: 'Our legal team handles all Nigerian property documentation — verified against our own geolocation records for watertight security.',
+    features: ['C of O processing', 'Geo-verified deed of assignment', 'Survey plan registration', 'Anti-fraud title check'] },
 ]
 
 onMounted(() => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') })
-  }, { threshold: 0.1 })
+  }, { threshold: 0.08 })
   document.querySelectorAll('.services .reveal').forEach(el => observer.observe(el))
 })
 </script>
 
 <style scoped>
-.services {
-  padding: 120px 80px;
-  background: var(--forest-deep);
-  position: relative;
-  overflow: hidden;
-}
-.services::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle at 20% 80%, rgba(201,168,76,0.06) 0%, transparent 50%),
-                    radial-gradient(circle at 80% 20%, rgba(42,80,64,0.2) 0%, transparent 50%);
-  pointer-events: none;
-}
-.services-inner { max-width: 1200px; margin: 0 auto; }
-.services-header {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: start;
-  gap: 40px;
-  margin-bottom: 72px;
-}
-.services-title {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 3.5vw, 3.2rem);
-  font-weight: 300;
-  line-height: 1.2;
-  color: var(--cream);
-}
+.services { padding: 130px 80px; background: var(--forest-mid); position: relative; overflow: hidden; }
+.services::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle at 10% 90%, rgba(201,168,76,0.05) 0%, transparent 40%), radial-gradient(circle at 90% 10%, rgba(78,205,196,0.04) 0%, transparent 40%); pointer-events: none; }
+.services-inner { max-width: 1240px; margin: 0 auto; }
+.services-header { margin-bottom: 72px; }
+.section-label { display: block; margin-bottom: 20px; }
+.services-title { font-family: var(--font-display); font-size: clamp(2.2rem, 3.5vw, 3.5rem); font-weight: 300; line-height: 1.2; color: var(--cream); margin-bottom: 20px; }
 .services-title em { font-style: italic; color: var(--gold); }
-.services-sub {
-  font-size: 0.95rem;
-  line-height: 1.75;
-  color: rgba(247,242,232,0.55);
-  max-width: 360px;
-}
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-}
-.service-card {
-  position: relative;
-  background: rgba(247,242,232,0.03);
-  border: 1px solid rgba(247,242,232,0.06);
-  padding: 40px 36px;
-  overflow: hidden;
-  transition: background 0.4s, transform 0.4s var(--spring), border-color 0.4s;
-  cursor: pointer;
-}
-.service-card:hover {
-  background: rgba(247,242,232,0.06);
-  border-color: var(--accent);
-  transform: translateY(-4px);
-}
-.card-number {
-  position: absolute;
-  top: 30px; right: 30px;
-  font-family: var(--font-display);
-  font-size: 3rem;
-  font-weight: 700;
-  color: rgba(247,242,232,0.05);
-  line-height: 1;
-}
+.services-sub { font-size: 0.95rem; line-height: 1.75; color: rgba(247,242,232,0.5); max-width: 520px; }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.service-card { position: relative; background: rgba(247,242,232,0.03); border: 1px solid rgba(247,242,232,0.07); padding: 40px 36px; overflow: hidden; transition: background 0.4s, transform 0.4s var(--spring), border-color 0.4s; }
+.service-card:hover { background: rgba(247,242,232,0.06); border-color: var(--accent); transform: translateY(-4px); }
+.card-number { position: absolute; top: 24px; right: 24px; font-family: var(--font-display); font-size: 3.5rem; font-weight: 700; color: rgba(247,242,232,0.04); line-height: 1; }
 .card-icon { font-size: 2rem; margin-bottom: 24px; }
-.card-title {
-  font-family: var(--font-ui);
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--cream);
-  margin-bottom: 12px;
-  letter-spacing: 0.02em;
-}
-.card-desc {
-  font-size: 0.88rem;
-  line-height: 1.7;
-  color: rgba(247,242,232,0.5);
-  margin-bottom: 20px;
-}
-.card-features {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.card-features li {
-  font-size: 0.8rem;
-  color: rgba(247,242,232,0.35);
-  padding-left: 14px;
-  position: relative;
-}
-.card-features li::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 50%;
-  width: 6px; height: 1px;
-  background: var(--accent);
-  transform: translateY(-50%);
-}
-.card-arrow {
-  position: absolute;
-  bottom: 32px; right: 32px;
-  color: var(--accent);
-  opacity: 0;
-  transform: translateX(-10px);
-  transition: opacity 0.3s, transform 0.3s var(--spring);
-}
-.service-card:hover .card-arrow {
-  opacity: 1;
-  transform: translateX(0);
-}
-.card-glow {
-  position: absolute;
-  bottom: -60px; left: 50%;
-  transform: translateX(-50%);
-  width: 120px; height: 120px;
-  background: var(--accent);
-  border-radius: 50%;
-  filter: blur(40px);
-  opacity: 0;
-  transition: opacity 0.4s;
-}
-.service-card:hover .card-glow { opacity: 0.12; }
+.card-title { font-family: var(--font-ui); font-size: 0.95rem; font-weight: 700; color: var(--cream); margin-bottom: 12px; line-height: 1.3; }
+.card-desc { font-size: 0.86rem; line-height: 1.72; color: rgba(247,242,232,0.48); margin-bottom: 20px; }
+.card-features { list-style: none; display: flex; flex-direction: column; gap: 7px; margin-bottom: 20px; }
+.card-features li { font-size: 0.78rem; color: rgba(247,242,232,0.35); padding-left: 14px; position: relative; }
+.card-features li::before { content: ''; position: absolute; left: 0; top: 7px; width: 6px; height: 1px; background: var(--accent); }
+.card-tech-tag { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-ui); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--tech-blue); background: rgba(78,205,196,0.08); border: 1px solid rgba(78,205,196,0.2); padding: 5px 10px; }
+.badge-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--tech-blue); animation: blink 2s ease-in-out infinite; }
+@keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+.card-glow { position: absolute; bottom: -80px; left: 50%; transform: translateX(-50%); width: 160px; height: 160px; background: var(--accent); border-radius: 50%; filter: blur(50px); opacity: 0; transition: opacity 0.4s; pointer-events: none; }
+.service-card:hover .card-glow { opacity: 0.1; }
 
-@media (max-width: 1000px) {
-  .services { padding: 80px 40px; }
-  .services-header { grid-template-columns: 1fr; gap: 20px; }
-  .services-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 640px) {
-  .services { padding: 60px 20px; }
-  .services-grid { grid-template-columns: 1fr; }
-}
+@media (max-width: 1060px) { .services { padding: 80px 40px; } .services-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .services { padding: 60px 20px; } .services-grid { grid-template-columns: 1fr; } }
 </style>

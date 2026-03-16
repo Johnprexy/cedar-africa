@@ -31,7 +31,7 @@
     </div>
 
     <div class="footer-bottom">
-      <span>© {{ year }} Cedar Africa Ltd. All rights reserved.</span>
+      <span>© {{ year }} Cedar Home Builder Ltd. All rights reserved.</span>
       <div class="footer-legal">
         <a href="#" @mouseenter="$emit('hover')" @mouseleave="$emit('unhover')">Privacy Policy</a>
         <a href="#" @mouseenter="$emit('hover')" @mouseleave="$emit('unhover')">Terms of Service</a>
@@ -65,7 +65,7 @@ const linkCols = [
   { title: 'Contact', links: [
     { label: 'Lagos, Nigeria', href: '#' },
     { label: 'London, UK', href: '#' },
-    { label: 'hello@cedarafrica.com', href: 'mailto:hello@cedarafrica.com' },
+    { label: 'hello@cedarhomebuilder.com', href: 'mailto:hello@cedarhomebuilder.com' },
     { label: '+234 810 000 0000', href: 'tel:+2348100000000' },
   ]},
 ]
